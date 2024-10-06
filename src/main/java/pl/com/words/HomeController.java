@@ -2,6 +2,7 @@ package pl.com.words;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import pl.com.words.domain.Word;
 
 @Controller
 public class HomeController {
@@ -15,4 +16,11 @@ public class HomeController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/words")
+    public Iterable<Word> getWords() {
+        return this.wordService.getWords();
+    }
+
+
 }
