@@ -1,10 +1,11 @@
-package pl.com.words;
+package pl.com.words.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import pl.com.words.domain.Word;
+import org.springframework.web.bind.annotation.RestController;
+import pl.com.words.service.WordService;
 
-@Controller
+@RestController
 public class HomeController {
     private final WordService wordService;
 
@@ -14,12 +15,12 @@ public class HomeController {
 
     @GetMapping("/")
     public String index() {
-        return "index";
+        return this.wordService.getWords().toString();
     }
 
     @GetMapping("/words")
-    public Iterable<Word> getWords() {
-        return this.wordService.getWords();
+    public String getWords() {
+        return this.wordService.getWords().toString();
     }
 
 

@@ -15,6 +15,10 @@ public class Word {
     private String headword;
     private List<String> definitions;
 
+    public Word() {
+
+    }
+
     public Word(String headword, List<String> definitions) {
         this.headword = headword;
         this.definitions = definitions;

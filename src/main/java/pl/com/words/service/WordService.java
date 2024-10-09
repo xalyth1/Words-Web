@@ -1,4 +1,4 @@
-package pl.com.words;
+package pl.com.words.service;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
@@ -22,11 +22,6 @@ public class WordService {
         return repository.findAll();
     }
 
-//    @PostConstruct
-//    void initSomeWords() {
-//        repository.save(new Word("is", List.of("jest")));
-//        repository.save(new Word("car", List.of("samochód")));
-//
-//    }
+
 
 }
